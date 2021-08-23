@@ -31,7 +31,7 @@ echo 3 - watch benson on youtube
                 echo = = = = = = = = = = = = 
                 echo Giving correct permissions
                 echo = = = = = = = = = = = = 
-                chmod 777 $BASEDIR/wrapper_launcher
+                chmod 777 $BASEDIR/start_wrapper.sh
                 sleep 3
                 
 
@@ -79,6 +79,8 @@ echo 3 - watch benson on youtube
                 echo = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
                 echo Type Website to go to Wrapper offline website.
                 echo Type close to close wrapper. Type server to open wrapper asset server 
+                echo Wait a second! before you go any futher, adobe flash has been retired on a browser you are using!
+                echo to get that back, type puffin and it should install it for you. you only need to do this once.
                 echo = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
          ;;
@@ -96,6 +98,24 @@ echo 3 - watch benson on youtube
                 echo = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
           ;;
+                [puffin]* )
+                clear
+                echo = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+                echo Installing puffin browser on your MacOS system...
+                echo = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+                open -a Terminal.app $BASEDIR/utilities/PuffinInstaller_9.0.0.368.dmg
+                
+
+                echo = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+                echo if the installation is done for Puffin Browser, you can type website and it should open
+                echo http://localhost:4343 in your default browser. after it opens, copy the url and head to puffin browser.
+                echo while you are in puffin browser, paste the url you just copied and it should take you to the videolist.
+                echo click on make a video and it should work. boom! Wrapper: Offline For MacOS is working again!
+                echo you may need to stay in this window just in case something happens. 
+                echo if you want to close Wrapper: Offline, just type close and it should close it down.
+                echo = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+          ;;
                 [close]* )
                 clear
                 
@@ -103,7 +123,7 @@ echo 3 - watch benson on youtube
                 
                 pkill "node"
                 pkill "http-server"
-                pkill "wrapper_launcher"
+                pkill "start_wrapper.sh"
                 
                 ;;
                 [server]* )
